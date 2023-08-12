@@ -1,0 +1,73 @@
+<section>
+  <button
+  type="button"
+  routerLink="/user-list"
+  class="btn btn-success animated-button"
+  style="margin: 10px;"
+>
+  Go back
+</button>
+
+  
+  <h1>Full User information</h1>
+
+  <div class="wrapper">
+    <div *ngIf="user$ | async as user" class="profile-card js-profile-card">
+      <div class="profile-card__img">
+        <img
+          src="https://res.cloudinary.com/muhammederdem/image/upload/v1537638518/Ba%C5%9Fl%C4%B1ks%C4%B1z-1.jpg"
+          alt="profile card"
+        />
+      </div>
+
+      <div class="profile-card__cnt js-profile-cnt">
+        <div class="profile-card__name">{{ user.name }}</div>
+        <div class="profile-card__txt">
+          Front-end Developer from <strong>{{ user.address.city }}</strong>
+        </div>
+        <div class="profile-card-loc">
+          <span class="profile-card-loc__icon">
+            <svg class="icon"><use xlink:href="#icon-location"></use></svg>
+          </span>
+
+          <span class="profile-card-loc__txt">
+            {{ user.email }}
+          </span>
+        </div>
+
+        <div class="profile-card-inf">
+          <div class="profile-card-inf__item">
+            <div class="profile-card-inf__title">Website</div>
+            <p style="cursor: pointer" href="#" class="profile-card-inf__txt">
+              {{ user.website }}
+            </p>
+          </div>
+
+          <div class="profile-card-inf__item">
+            <div class="profile-card-inf__title">Company</div>
+            <div class="profile-card-inf__txt">{{ user.company.name }}</div>
+          </div>
+
+          <div class="profile-card-inf__item">
+            <div class="profile-card-inf__title">Username</div>
+            <div class="profile-card-inf__txt">{{ user.username }}</div>
+          </div>
+
+          <div class="profile-card-inf__item">
+            <div class="profile-card-inf__title">Phone</div>
+            <div class="profile-card-inf__txt">{{ user.phone }}</div>
+          </div>
+        </div>
+
+        <div class="profile-card-ctr">
+          <button
+            routerLink="/posts/{{ user.id }}"
+            class="profile-card__button button--blue js-message-btn"
+          >
+            Posts
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

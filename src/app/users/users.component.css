@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext");
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+section {
+  background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.description {
+  width: 100%;
+  max-width: 50%;
+  text-align: center;
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  margin: 2% 0;
+}
+
+.description span{
+  font-weight: bold;
+  color: lightgreen;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 50%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1024px) {
+  table {
+    width: 100%;
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  table {
+    border: 0;
+  }
+
+  section {
+    height: auto;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animated-button:hover {
+  animation: pulseAnimation 2s infinite;
+}
+.table-container {
+  overflow-y: hidden;
+}

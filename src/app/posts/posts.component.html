@@ -1,0 +1,30 @@
+<section>
+  <button
+  type="button"
+ (click)="goBack()"
+  class="btn btn-success animated-button"
+  style="margin: 10px;"
+>
+  Go back
+</button>
+  <h1>User Posts</h1>
+  <div class="wrapper">
+    <div *ngFor="let item of user$ | async; trackBy: trackByFn" class="profile-card js-profile-card">
+      <div class="profile-card__img">
+        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80" alt="profile card">
+      </div>
+  
+      <div class="profile-card__cnt js-profile-cnt">
+        <div class="profile-card__name">{{ item.name }}</div>
+        <div class="profile-card__txt"><strong>{{ item.email }}</strong></div>
+       
+        <div class="profile-card-inf">
+          <div class="profile-card-inf__item">
+            <div class="profile-card-inf__title">Description</div>
+            <p class="profile-card-inf__txt">{{item.body}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
