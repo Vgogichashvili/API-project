@@ -23,6 +23,6 @@ export class ContentService {
   }
 
   getPostsById(id: number): Observable<postModel[]>{
-    return this.http.get<any>(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
+    return this.http.get<postModel[]>(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
   }
 }
